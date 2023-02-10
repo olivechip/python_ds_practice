@@ -22,11 +22,16 @@ def sum_up_diagonals(matrix):
     """    
     total = 0
 
-    tr_bl = [matrix[i][i] for i in range(len(matrix))]
+    # created a new list of values from top-left to bottom-right
+    tl_br = [matrix[i][i] for i in range(len(matrix))]
+    # iteration through the new list to add each value to 'total'
     for num in tr_bl:
         total = total + num
     
+    # created a new list of values from bottom-left to top-right
     bl_tr = [matrix[i][len(matrix)-1-i] for i in range(len(matrix))]
+    # iteration through the new list to add each value to 'total'
     for num in bl_tr:
         total = total + num
+        
     print(total)
