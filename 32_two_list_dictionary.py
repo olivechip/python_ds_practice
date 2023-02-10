@@ -14,4 +14,23 @@ def two_list_dictionary(keys, values):
 
         >>> two_list_dictionary(['a', 'b', 'c'], [1, 2, 3, 4])
         {'a': 1, 'b': 2, 'c': 3}
-   """
+    """
+    n = 0
+    if len(keys) == len(values):
+        final_dict = {}.fromkeys(keys, None)
+        while n <= len(keys)-1:
+            final_dict[keys[n]] = values[n]
+            n = n + 1
+        return final_dict
+    elif len(keys) < len(values):
+        final_dict = {}.fromkeys(keys, None)
+        while n <= len(keys)-1:
+            final_dict[keys[n]] = values[n]
+            n = n + 1
+        return final_dict
+    else:
+        final_dict = {}.fromkeys(keys, None)
+        while n <= len(values)-1:
+            final_dict[keys[n]] = values[n]
+            n = n + 1
+        return final_dict

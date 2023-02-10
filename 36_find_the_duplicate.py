@@ -13,3 +13,11 @@ def find_the_duplicate(nums):
         >>> find_the_duplicate([2, 1, 3, 4]) is None
         True
     """
+    if len(nums) == len(set(nums)):
+        return None
+    else: 
+        count = 0
+        for num in nums:
+            count = nums.count(num)
+            if count == 2:
+                return num
